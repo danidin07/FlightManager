@@ -1,0 +1,26 @@
+﻿@model IEnumerable<LoggerDto>
+<h1>Logger</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Leg</th>
+            <th scope="col">Airline</th>
+            <th scope="col">Flight Code</th>
+            <th scope="col">Enter Time</th>
+            <th scope="col">Exit Time</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model.Reverse())
+        {
+            <tr>
+                <td>@log.Leg.Number</td>
+                <td>@log.Flight.Brand</td>
+                <td>@log.Flight.Code</td>
+                <td>@log.In</td>
+                <td>@log.Out</td>
+            </tr>
+        }
+    </tbody>
+</table>
